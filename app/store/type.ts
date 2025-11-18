@@ -41,3 +41,27 @@ export interface Pagination {
   hasNextPage: boolean;
   hasPreviousPage: boolean;
 }
+
+// Result Type
+
+export interface ResultCardType {
+  message: string;
+  data: Data;
+}
+
+export interface Data {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  totalWeight: number;
+}
+
+export interface ResultSurveyParams {
+  data: ResultData[];
+}
+
+export interface ResultData {
+  questionId: string;
+  answerId: string;
+}

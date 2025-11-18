@@ -6,7 +6,7 @@ export const serverApi = axios.create({
 
 serverApi.interceptors.response.use(
   (res) => {
-    console.log(res, "res")
+    console.log(res, "res");
     return res;
   },
   (err) => {

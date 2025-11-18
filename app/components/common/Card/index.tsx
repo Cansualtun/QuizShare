@@ -2,7 +2,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "~/componen
 import { Link } from "react-router";
 import type { CardDemoProps } from "./type";
 
-export default function CardDemo({ img, title, description, url, className }: CardDemoProps) {
+export default function CardDemo({ img, title, description, slug, className }: CardDemoProps) {
     return (
         <Card
             className={[
@@ -35,7 +35,7 @@ export default function CardDemo({ img, title, description, url, className }: Ca
             </CardContent>
             <CardFooter className="p-0 pb-1 justify-center">
                 <Link
-                    to={url}
+                    to={slug}
                     className="text-[11px] lg:text-xs underline underline-offset-4 hover:opacity-80"
                 >
                     Go to Test →

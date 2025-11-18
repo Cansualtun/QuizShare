@@ -1,16 +1,19 @@
-import { useParams } from "react-router";
+import QuestionCard from "~/components/common/QuestionCard";
+import { useSurveyById } from "~/store/useSurveyStore";
+//@ts-ignore
+import type { Route } from "~/types/product";
 
-export default function TestPage() {
-    const { slug } = useParams();
+export async function loader({ params }: Route.LoaderArgs) {
+    const posts = await useSurveyById(params.slug as any);
+    return posts;
+}
 
+export default function TestPage({ loaderData }: Route.ComponentProps) {
+    const postsData = loaderData.data;
+    console.log(postsData, "bu ne")
     return (
-        <main className="p-6 text-center">
-            <h1 className="text-2xl font-semibold capitalize">
-                {slug?.replace(/-/g, " ")}
-            </h1>
-            <p className="mt-2 text-gray-500">
-                You are viewing <strong>{slug}</strong>
-            </p>
+        <main className="w-full max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <QuestionCard survey={postsData.survey} questions={postsData.questions} />
         </main>
     );
 }

@@ -13,7 +13,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 export default function Product({ loaderData }: Route.ComponentProps) {
-  
+
   const layoutSpan: any = [1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1];
   const postsData = loaderData.surveys;
 
@@ -24,9 +24,8 @@ export default function Product({ loaderData }: Route.ComponentProps) {
           return (
             <div
               key={index}
-              className={`min-w-0 min-h-0 flex items-stretch justify-stretch p-1 lg:p-2 ${
-                col === 2 ? "col-span-2" : "col-span-1"
-              }`}
+              className={`min-w-0 min-h-0 flex items-stretch justify-stretch p-1 lg:p-2 ${col === 2 ? "col-span-2" : "col-span-1"
+                }`}
             >
               {col === 2 ? (
                 <Header />
@@ -35,7 +34,7 @@ export default function Product({ loaderData }: Route.ComponentProps) {
                   img={postsData[index]?.headerImageUrl}
                   title={postsData[index]?.title}
                   description={postsData[index]?.description}
-                  url={postsData[index]?.url}
+                  slug={postsData[index]?.slug}
                   className={"shadow-lg lg:shadow-md"}
                 />
               )}
