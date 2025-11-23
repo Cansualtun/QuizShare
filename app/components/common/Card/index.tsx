@@ -26,10 +26,10 @@ export default function CardDemo({ img, title, description, slug, className }: C
             </CardHeader>
 
             <CardContent className="px-1.5 py-1 min-h-0">
-                <CardTitle className="text-[13px] lg:text-sm font-semibold leading-snug line-clamp-1">
+                <CardTitle className="font-semibold leading-snug line-clamp-1">
                     {title}
                 </CardTitle>
-                <p className="mt-1 text-[11px] lg:text-xs leading-snug line-clamp-2">
+                <p className="mt-1 lg:text-sm leading-snug line-clamp-2">
                     {description}
                 </p>
             </CardContent>

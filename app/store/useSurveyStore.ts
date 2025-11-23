@@ -14,8 +14,8 @@ export const useSurveyStore = create<AppState>((set, get) => ({
   byId: {},
 }));
 
-export const useSurvey = async () => {
-  const res = await serverApi.get<Root>("/surveys");
+export const useSurvey = async (page: number = 1) => {
+  const res = await serverApi.get<Root>(`/surveys?page=${page}`);
   return res.data;
 };
 
